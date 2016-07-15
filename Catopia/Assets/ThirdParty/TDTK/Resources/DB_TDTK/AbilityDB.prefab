@@ -1,0 +1,343 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: AbilityDB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06eebbd3b51fa644c86462d84597a004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityList:
+  - ID: 0
+    name: Strike
+    icon: {fileID: 21300000, guid: 6584f2dda2286dc4b9b694d51d43e289, type: 3}
+    disableInAbilityManager: 0
+    cost: 35
+    cooldown: 10
+    currentCD: 0
+    requireTargetSelection: 1
+    singleUnitTargeting: 0
+    targetType: 1
+    effectObj: {fileID: 100000, guid: 108f472da3062384da49f58f11e400d7, type: 2}
+    maxUseCount: -1
+    usedCount: 0
+    indicator: {fileID: 0}
+    autoScaleIndicator: 1
+    useDefaultEffect: 1
+    effectList:
+    - duration: 0
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    effect:
+      duration: 0
+      damageMin: 20
+      damageMax: 35
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    aoeRadius: 2.5
+    effectDelay: 0.5
+    useCustomDesp: 1
+    desp: "\u4E00\u53D1\u9006\u8F6C\u70B8\u5F39\uFF0C\u8BA9\u4EBA\u751F\u91CD\u6765\u4E00\u6B21"
+  - ID: 1
+    name: ShockWave
+    icon: {fileID: 21300000, guid: c0dd4da23e47a94488062c75ca7c1fce, type: 3}
+    disableInAbilityManager: 0
+    cost: 35
+    cooldown: 30
+    currentCD: 0
+    requireTargetSelection: 1
+    singleUnitTargeting: 0
+    targetType: 0
+    effectObj: {fileID: 100000, guid: 108f472da3062384da49f58f11e400d7, type: 2}
+    maxUseCount: -1
+    usedCount: 0
+    indicator: {fileID: 0}
+    autoScaleIndicator: 1
+    useDefaultEffect: 1
+    effectList:
+    - duration: 0
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    effect:
+      duration: 0
+      damageMin: 5
+      damageMax: 10
+      stunChance: 0.25
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    aoeRadius: 5
+    effectDelay: 0.5
+    useCustomDesp: 0
+    desp: 
+  - ID: 3
+    name: Super EMP
+    icon: {fileID: 21300000, guid: 337a76953d96f3a4cbfa193a37f557fe, type: 3}
+    disableInAbilityManager: 1
+    cost: 75
+    cooldown: 80
+    currentCD: 0
+    requireTargetSelection: 0
+    singleUnitTargeting: 0
+    targetType: 0
+    effectObj: {fileID: 0}
+    maxUseCount: -1
+    usedCount: 0
+    indicator: {fileID: 0}
+    autoScaleIndicator: 1
+    useDefaultEffect: 1
+    effectList:
+    - duration: 5
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 3
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 2
+        interval: 0.5
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    effect:
+      duration: 3
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 3
+        slowMultiplier: 0.25
+      dot:
+        effectID: 0
+        duration: 3
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    aoeRadius: 2
+    effectDelay: 0.5
+    useCustomDesp: 0
+    desp: 
+  - ID: 2
+    name: Repair
+    icon: {fileID: 21300000, guid: e799087183eca4549adee10afa438d65, type: 3}
+    disableInAbilityManager: 0
+    cost: 40
+    cooldown: 15
+    currentCD: 0
+    requireTargetSelection: 1
+    singleUnitTargeting: 1
+    targetType: 1
+    effectObj: {fileID: 100000, guid: 0968681ee889529499cee7764948b006, type: 2}
+    maxUseCount: -1
+    usedCount: 0
+    indicator: {fileID: 0}
+    autoScaleIndicator: 1
+    useDefaultEffect: 1
+    effectList:
+    - duration: 5
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 3
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 2
+        interval: 0.5
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    effect:
+      duration: 0
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 0
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 0
+        interval: 0
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 8
+      HPGainMax: 15
+    aoeRadius: 4
+    effectDelay: 0.5
+    useCustomDesp: 0
+    desp: 
+  - ID: 4
+    name: Super Buff
+    icon: {fileID: 21300000, guid: deb0e7c46e945524fb25582451ff80dd, type: 3}
+    disableInAbilityManager: 1
+    cost: 100
+    cooldown: 80
+    currentCD: 0
+    requireTargetSelection: 0
+    singleUnitTargeting: 0
+    targetType: 0
+    effectObj: {fileID: 100000, guid: 0968681ee889529499cee7764948b006, type: 2}
+    maxUseCount: -1
+    usedCount: 0
+    indicator: {fileID: 0}
+    autoScaleIndicator: 1
+    useDefaultEffect: 1
+    effectList:
+    - duration: 0
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 3
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 2
+        interval: 0.5
+        value: 0
+      damageBuff: 0
+      rangeBuff: 0
+      cooldownBuff: 0
+      HPGainMin: 0
+      HPGainMax: 0
+    effect:
+      duration: 5
+      damageMin: 0
+      damageMax: 0
+      stunChance: 0
+      slow:
+        effectID: 0
+        duration: 5
+        slowMultiplier: 0
+      dot:
+        effectID: 0
+        duration: 5
+        interval: 0
+        value: 0
+      damageBuff: 0.25
+      rangeBuff: 0.25
+      cooldownBuff: 0.25
+      HPGainMin: 0
+      HPGainMax: 0
+    aoeRadius: 4
+    effectDelay: 0
+    useCustomDesp: 0
+    desp: 
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1
