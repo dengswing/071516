@@ -1,0 +1,5 @@
+32 x 32 tiles 
+256 x 181 tile size
+
+position x-256 y 2805
+origin -350 -2840
