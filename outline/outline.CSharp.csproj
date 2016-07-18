@@ -58,12 +58,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -88,6 +82,9 @@
     <None Include="Assets\Resources\Shaders\OutterLineShapeBlur.shader" />
     <None Include="Assets\Resources\Shaders\RimLightSpce.shader" />
     <None Include="Assets\Resources\Shaders\RimLightSpecBump.shader" />
+    <None Include="Assets\Resources\Shaders\ToonBasicOutline.shader" />
+    <None Include="Assets\Resources\Shaders\inuyashaCharactersCutout.shader" />
+    <None Include="Assets\Resources\Shaders\valkyireChr.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
