@@ -267,10 +267,6 @@
 
 		fixed4 col = 0;
 		o.Albedo.rgb = finalMask;
-		//o.Alpha = c.a-c.a*(1-_AP);
-
-		//half rim = 1.0 - saturate(dot(normalize(IN.viewDir), IN.worldNormal));
-		//o.Emission = o.Albedo.rgb * pow(rim, _RimPower);
 	}
 	ENDCG
 

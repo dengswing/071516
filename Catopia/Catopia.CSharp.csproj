@@ -358,6 +358,7 @@
     <None Include="Assets\Shaders\NewSurfaceShader.shader" />
     <None Include="Assets\Shaders\OutlineShader.shader" />
     <None Include="Assets\Shaders\backup.shader" />
+    <None Include="Assets\Shaders\sss.shader" />
     <None Include="Assets\ThirdParty\SpineUnity\Examples\Spine\Dragon\dragon.atlas.txt" />
     <None Include="Assets\ThirdParty\SpineUnity\Examples\Spine\Dragon\license.txt" />
     <None Include="Assets\ThirdParty\SpineUnity\Examples\Spine\Eyes\eyes.atlas.txt" />
