@@ -10,6 +10,7 @@ public class FeedItemManager : MonoBehaviour
     private int[] itemCount = new int[] { 4, 2, 10 };
     private UIMultiScroller itemList;
     private FeedClickDelegate itemClick;
+	private FeedStartClickDelegate startClick;
 
     /// <summary>
     /// 显示商品
@@ -24,9 +25,10 @@ public class FeedItemManager : MonoBehaviour
     /// 喂食侦听
     /// </summary>
     /// <param name="callBack"></param>
-    public void AddListener(FeedClickDelegate callBack)
+	public void AddListener(FeedClickDelegate callBack,FeedStartClickDelegate startBack)
     {
         itemClick = callBack;
+		startClick = startBack;
     }
 
     void Awake()
@@ -43,11 +45,17 @@ public class FeedItemManager : MonoBehaviour
     void CreateItem(int index = 1)
     {
         if (index <= 0 || index > itemCount.Length) index = 1;
-        itemList.AddListenerItemClick(ItemClickHandler);
+        itemList.AddListenerItemClick(ItemClickHandler,StartHandler);
         itemList.Reset();
         itemList.DataCount = itemCount[index - 1] + useless;
         itemList.StartShow();
     }
+
+	void StartHandler(int index)
+	{
+		if (startClick != null)
+			startClick (index);
+	}
 
     void ItemClickHandler(int index)
     {

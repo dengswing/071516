@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class FeedItem : UIMultiScrollIndex
 {
     float time;
-    float endTime = 1f;
+    float endTime = 0.5f;
     DragImage image;
     GameObject currentDrag;
     bool isEat;
@@ -31,30 +31,31 @@ public class FeedItem : UIMultiScrollIndex
         currentDrag.AddComponent<CanvasGroup>();
         if (isEat)
         {
-            DragImageEffect(currentDrag, dragTransform.localPosition, new Vector3(0, 160, position.z), dragTransform.localScale, new Vector3(0.8f, 0.8f, 0.8f));
+            DragImageEffect(currentDrag, dragTransform.localPosition, new Vector3(0, 0, position.z), dragTransform.localScale, new Vector3(0.8f, 0.8f, 0.8f));
         }
         else
         {
             Canvas canvas = DragImage.FindInParents<Canvas>(currentDrag);
-            Vector2 globalMousePos = RectTransformUtility.WorldToScreenPoint(canvas.worldCamera, transform.position);           
+            Vector2 globalMousePos = RectTransformUtility.WorldToScreenPoint(canvas.worldCamera, transform.position);
 
             Vector2 globalPos;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(dragTransform.parent.transform as RectTransform, globalMousePos, canvas.worldCamera, out globalPos);
-            globalMousePos.x += (dragTransform as RectTransform).rect.width * .5f;
-            globalMousePos.y -= (dragTransform as RectTransform).rect.height * .5f;
-            
-            Debug.Log("===>globalMousePos" + globalMousePos + "|" + dragTransform.localPosition + "|" + transform.position);
-             DragImageEffect(currentDrag, dragTransform.localPosition, globalPos, dragTransform.localScale, new Vector3(0.8f, 0.8f, 0.8f));
+            globalPos.x += (dragTransform as RectTransform).rect.width * 0.75f * .5f;
+            globalPos.y -= (dragTransform as RectTransform).rect.height * 0.75f * .5f;
+            DragImageEffect(currentDrag, dragTransform.localPosition, globalPos, dragTransform.localScale, new Vector3(0.75f, 0.75f, 0.75f));
         }
     }
 
     void DragImageEffect(GameObject gameObject, Vector3 startPositionVector, Vector3 endPositionVector, Vector3 startScaleVector, Vector3 endScaleVector)
     {
-        float duration = 1;
+		float duration = endTime;
 
         CatGameTools.UIGameObjectScale(gameObject, startScaleVector, endScaleVector, duration);
         CatGameTools.UIGameObjectAlpha(gameObject, 1, 0, duration);
         CatGameTools.UIGameObjectPosition(gameObject, startPositionVector, endPositionVector, duration);
+
+		if (isEat && startClickBack != null)
+			startClickBack (this);
     }
 
     void Update()
@@ -62,10 +63,9 @@ public class FeedItem : UIMultiScrollIndex
         time += Time.deltaTime;
         if (currentDrag && time > endTime)
         {
+			if (isEat && clickBack != null) clickBack(this);
             GameObject.DestroyImmediate(currentDrag);
-             currentDrag = null;
-
-             if (isEat && clickBack != null) clickBack(this);
+            currentDrag = null;
         }
     }
 

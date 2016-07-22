@@ -4,6 +4,8 @@ using UnityEngine;
 public class UIMultiScrollIndex : MonoBehaviour
 {
     protected Action<UIMultiScrollIndex> clickBack;
+	protected Action<UIMultiScrollIndex> startClickBack;
+
 
     private UIMultiScroller _scroller;
     private int _index;
@@ -18,9 +20,10 @@ public class UIMultiScrollIndex : MonoBehaviour
 
     }
 
-    public virtual void AddListener(Action<UIMultiScrollIndex> callBack)
+	public virtual void AddListener(Action<UIMultiScrollIndex> callBack,Action<UIMultiScrollIndex> startBack)
     {
         clickBack = callBack;
+		startClickBack = startBack;
     }
 
     public virtual int Index

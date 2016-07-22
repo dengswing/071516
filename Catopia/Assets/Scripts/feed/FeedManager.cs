@@ -46,7 +46,7 @@ public class FeedManager : MonoBehaviour
         menuManager = shop.GetComponentInChildren<FeedMenuManager>();
         shopMove = shop.GetComponentInChildren<FeedShopMove>();
         menuManager.AddListener(MenuHandler);
-        itemManager.AddListener(EatHandler);
+        itemManager.AddListener(EatHandler,ShopCloseHandler);
 
         feedScoreManager = scoreEffect.GetComponentInChildren<FeedScoreManager>();
         loopEffectManager = eatLoop.GetComponent<LoopEffectManager>();
@@ -80,10 +80,16 @@ public class FeedManager : MonoBehaviour
         itemManager.ShowItem(index);
     }
 
+	void ShopCloseHandler(int index)
+	{
+		shopMove.ItemShowAndHide(false);
+	}
+
     void EatHandler(EAT_STATE eat)
     { //开始喂食
+		Debug.Log("====>>>123");
         resultState = eat;
-        shopMove.ItemShowAndHide(false);
+        
         actionManager.Feed(EAT_STATE.EAT, EatFinish);
         expressionManager.Hide(); //隐藏表情
         loopEffectManager.PlayAnimation();

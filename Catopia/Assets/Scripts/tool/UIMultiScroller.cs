@@ -28,6 +28,7 @@ public class UIMultiScroller : MonoBehaviour
     private Queue<UIMultiScrollIndex> _unUsedQueue;  //将未显示出来的Item存入未使用队列里面，等待需要使用的时候直接取出
 
     private Action<int> itemClickBack;
+	private Action<int> itemStartBack;
 
     void Awake()
     {
@@ -128,9 +129,10 @@ public class UIMultiScroller : MonoBehaviour
     /// 添加点击事件侦听
     /// </summary>
     /// <param name="callBack"></param>
-    public void AddListenerItemClick(Action<int> callBack)
+	public void AddListenerItemClick(Action<int> callBack,Action<int> startBack)
     {
         itemClickBack = callBack;
+		itemStartBack = startBack;
     }
 
     private void AddItemIntoPanel(int index)
@@ -187,7 +189,7 @@ public class UIMultiScroller : MonoBehaviour
         }
 
 
-        itemBase.AddListener(ItemClickHandler);
+		itemBase.AddListener(ItemClickHandler,ItemStartHandler);
         itemBase.Scroller = this;
         itemBase.Index = index;
         _itemList.Add(itemBase);
@@ -197,6 +199,11 @@ public class UIMultiScroller : MonoBehaviour
     {
         if (item && itemClickBack != null) itemClickBack(item.Index);
     }
+
+	private void ItemStartHandler(UIMultiScrollIndex item)
+	{
+		if (item && itemStartBack != null) itemStartBack(item.Index);
+	}
 
     private int GetPosIndex()
     {

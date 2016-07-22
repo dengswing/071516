@@ -6,16 +6,14 @@ using UnityEngine;
 /// </summary>
 public class YuckEffect : MonoBehaviour
 {
-    public List<GameObject> yuckAnimationList;
-    public int count = 5;
-    public float startRandomTime = 5;
-    public float endRandomTime = 8;
-    public int batch = 1;
-    public int spaceTime = 1;
+    public List<GameObject> groupList;
+    public float gap = 800f;
+    public float speed = 0.1f;
 
-    float sTime;
-    int currentCount;
-    List<GameObject> effectList;
+    int currentIndex;
+    bool isDoing;
+    int cellPositionY = 0;
+    List<GameObject> list = new List<GameObject>();
 
     public void Hide()
     {
@@ -24,66 +22,61 @@ public class YuckEffect : MonoBehaviour
 
     void Awake()
     {
-        effectList = new List<GameObject>();
+
     }
 
-    void StartDoing(bool isFirst = false)
+    void StartDoing()
     {
-        sTime = 0;
-        var value = count / batch;
-        var createCount = value;
-        if (currentCount + value > count)
-        {
-            createCount = count - currentCount;
-        }
-        currentCount += createCount;
-        CreateEffect(createCount, isFirst);
-
-        Debug.Log("create==>" + createCount + "|currentCount=" + currentCount + "|" + count);
-    }
-
-    void CreateEffect(int count, bool isFirst = false)
-    {
-        EffectUpMove upMove;
-        int length = yuckAnimationList.Count;
-        int index = 0;
+        var count = groupList.Count;
         for (int i = 0; i < count; i++)
         {
-            var item = yuckAnimationList[index];
-            index++;
-            if (index >= length) index = 0;
-            var con = CatGameTools.AddChild(transform, item);
-            upMove = con.GetComponentInChildren<EffectUpMove>();
-            upMove.duration += Random.Range(startRandomTime, endRandomTime);
-            upMove.SetRandomPosition(isFirst);
-            effectList.Add(con);
+            CreateItem(i);
         }
+    }
+
+    void CreateItem(int index)
+    {
+        GameObject con;
+        var item = groupList[index];
+        con = CatGameTools.AddChild(transform, item);
+        con.transform.localPosition = new Vector3(0, cellPositionY);
+        cellPositionY -= (int)gap;
+        list.Add(con);
     }
 
     void Start()
     {
-        StartDoing(true);
+        StartDoing();
+        isDoing = true;
     }
 
     void OnDisable()
     {
-        currentCount = 0;
-        sTime = 0;
-
-        //while (effectList.Count > 0)
-        //{
-        //    GameObject.DestroyImmediate(effectList[0]);
-        //    effectList.RemoveAt(0);
-        //}
+		currentIndex = 0;
+        list.Clear();
+        transform.localPosition = new Vector3(0, 0, 0);
     }
 
     void Update()
     {
-        sTime += Time.deltaTime;
-
-        if (currentCount < count && sTime > spaceTime)
+        if (isDoing)
         {
-            StartDoing();
+            transform.Translate(0, speed, 0);
+            HitItem();
+        }
+    }
+
+    void HitItem()
+    {
+        var _content = transform.GetComponent<RectTransform>();
+        var index = Mathf.FloorToInt(_content.anchoredPosition.y / gap);
+        if (currentIndex != index)
+        {
+            var con = list[currentIndex];
+            con.transform.localPosition = new Vector3(0, cellPositionY);
+            cellPositionY -= (int)gap;
+            list.Add(con);
+            currentIndex = index;
         }
     }
 }

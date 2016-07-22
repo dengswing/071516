@@ -9,4 +9,9 @@
     /// 喂食点击 
     /// </summary>
     public delegate void FeedClickDelegate(EAT_STATE eatState);
+
+	/// <summary>
+	/// 喂食点击 
+	/// </summary>
+	public delegate void FeedStartClickDelegate(int index);
 }

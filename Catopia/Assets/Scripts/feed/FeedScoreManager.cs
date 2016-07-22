@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DG.Tweening;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 /// </summary>
 public class FeedScoreManager : MonoBehaviour
 {
-    public float startTime = 2f;
+    public float speed = 2f;
     public float duration = 1f;
 
     Action startBack;
@@ -18,6 +19,7 @@ public class FeedScoreManager : MonoBehaviour
     int max = 100;
     float current = 0;
     float index = 80;
+	bool isStart;
 
     public void AddListener(Action callback, Action startback)
     {
@@ -35,8 +37,25 @@ public class FeedScoreManager : MonoBehaviour
         score = transform.GetComponentInChildren<Slider>();
         progressText = score.GetComponentInChildren<Text>();
         progressText.text = string.Empty;
+
+		//StartDoing ();
     }
 
+	void StartDoing()
+	{
+		int number = 0;
+		// 创建一个 Tweener 对象， 另 number的值在 5 秒内变化到 100
+		Tween t = DOTween.To(() => number, x => number = x, max, speed).SetEase(Ease.InOutCirc);
+		// 给执行 t 变化时，每帧回调一次 UpdateTween 方法
+		t.OnUpdate(() => UpdateTween(number));
+	}
+
+    private void UpdateTween(int num)
+    {
+        Debug.Log(num);      // 变化过程中， 每帧回调该方法
+        score.value = num;
+        progressText.text = num.ToString();
+    }
 
     void OnDisable()
     {
@@ -45,6 +64,7 @@ public class FeedScoreManager : MonoBehaviour
         current = 0;
         progressText.text = string.Empty;
         score.value = 0;
+		isStart = false;
     }
 
 
@@ -52,31 +72,25 @@ public class FeedScoreManager : MonoBehaviour
     {
         sTime += Time.deltaTime;
 
-        if (score.value >= max)
-        {
-            if (startBack != null)
-            {
-                sTime = 0;
-                CatGameTools.UIGameObjectAlpha(gameObject, 1, 0, duration); //成绩开始隐藏
-                startBack();
-            }
-            startBack = null;
+		if (score.value >= max) {
+			if (startBack != null) {
+				sTime = 0;
+				CatGameTools.UIGameObjectAlpha (gameObject, 1, 0, duration); //成绩开始隐藏
+				startBack ();
+			}
+			startBack = null;
 
-            if (finishBack != null && sTime >= duration + 1)
-            {
-                finishBack();
-                finishBack = null;
-            }
-            return;
-        }
-
-        if (sTime > startTime)
-        {
-            index = index / 2;
-            if (index <= 1) index = 0.15f;
-            current += index;
-            score.value = current;
-            progressText.text = string.Format("{0} %", (int)score.value);
-        }
+			if (finishBack != null && sTime >= duration + 1) {
+				finishBack ();
+				finishBack = null;
+			}
+			return;
+		} else if(!isStart) 
+		{
+			isStart = true;
+			StartDoing ();
+			
+		}
+			
     }
 }
