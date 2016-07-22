@@ -100,6 +100,15 @@
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
+    <Reference Include="tk2dExternal">
+      <HintPath>Assets\ThirdParty\TK2DROOT\tk2d\Editor\tk2dExternal.dll</HintPath>
+    </Reference>
+    <Reference Include="tk2dSkin">
+      <HintPath>Assets\ThirdParty\TK2DROOT\tk2d\Editor\tk2dSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-UnityScript">
+      <HintPath>Library\ScriptAssemblies\Assembly-UnityScript.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Catopia.CSharp.csproj">
@@ -139,6 +148,132 @@
     <Compile Include="Assets\ThirdParty\SpineUnity\spine-unity\SkeletonUtility\Editor\SkeletonUtilityBoneInspector.cs" />
     <Compile Include="Assets\ThirdParty\SpineUnity\spine-unity\SkeletonUtility\Editor\SkeletonUtilityInspector.cs" />
     <Compile Include="Assets\ThirdParty\SpineUnity\spine-unity\SkeletonUtility\Editor\SkeletonUtilitySubmeshRendererInspector.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\AbilityEditorWindow.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\AbilityManagerEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\AnimationClipSettings.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\BuildManagerEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\CameraControlEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\DamageArmorDBEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\EditorDBManager.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\EditorUtilities.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\FPSControlEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\FPSWeaponEditorWindow.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\GameControlEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\MakeCreepEditorWindow.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\MakeSceneEditorWindow.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\MakeShootEditorWindow.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\MakeTowerEditorWindow.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\MenuExtension.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\MenuExtensionDora.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\PathTDEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\PerkEditorWindow.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\PerkManagerEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\PlatformTDEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\ResourceDBEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\ResourceManagerEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\ShootObjectEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\SpawnEditorWindow.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\SpawnManagerEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\SupportContactWindow.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\UnitCreepAnimationEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\UnitCreepEditorWindow.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\UnitEditorWindow.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\Editor\UnitTowerEditorWindow.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\UI\Editor\UIEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TDTK\Scripts\UI\Editor\UIPerkMenuEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Camera\tk2dCameraAnchorEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Camera\tk2dCameraEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Fonts\tk2dFontBuilder.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Fonts\tk2dFontEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Fonts\tk2dTextMeshEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Runtime\tk2dResourceEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Runtime\tk2dSystemUtility.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Shared\tk2dNaturalComparer.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\Atlas\tk2dAtlasBuilder.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\Atlas\tk2dAtlasRect.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\Atlas\tk2dMaxRectsBinPack.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\SpriteAnimationEditor\tk2dSpriteAnimationAnimOp.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\SpriteAnimationEditor\tk2dSpriteAnimationClipEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\SpriteAnimationEditor\tk2dSpriteAnimationClipTimelineEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\SpriteAnimationEditor\tk2dSpriteAnimationEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\SpriteAnimationEditor\tk2dSpriteAnimationEditorPopup.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\SpriteAnimationEditor\tk2dSpriteAnimationPreview.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\SpriteCollectionEditor\tk2dSpriteCollectionEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\SpriteCollectionEditor\tk2dSpriteCollectionEditorFontView.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\SpriteCollectionEditor\tk2dSpriteCollectionEditorPopup.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\SpriteCollectionEditor\tk2dSpriteCollectionEditorProxy.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\SpriteCollectionEditor\tk2dSpriteCollectionEditorSettingsView.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\SpriteCollectionEditor\tk2dSpriteCollectionEditorSpriteSheetView.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\SpriteCollectionEditor\tk2dSpriteCollectionEditorSpriteView.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\SpriteCollectionEditor\tk2dSpriteCollectionEditorTextureView.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\SpritePicker\tk2dSpritePickerPopup.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\TextureProcessing\tk2dFloydSteinbergDithering.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\Triangulator\tk2dSpriteFromTextureEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\Triangulator\tk2dTriangulator.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\tk2dAnimatedSpriteEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\tk2dClippedSpriteEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\tk2dSlicedSpriteEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\tk2dSpriteAnimatorEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\tk2dSpriteCollectionBuilder.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\tk2dSpriteCollectionBuilderDeprecated.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\tk2dSpriteCollectionBuilderUtil.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\tk2dSpriteCollectionLinkBuilder.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\tk2dSpriteCollectionPlatformBuilder.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\tk2dSpriteCollectionTextureWatcher.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\tk2dSpriteEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\tk2dSpriteThumbnailCache.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\tk2dStaticSpriteBatcherEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\Sprites\tk2dTiledSpriteEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\tk2dAutoRebuild.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\tk2dEditorSkin.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\tk2dEditorUtility.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\tk2dGrid.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\tk2dGuiUtility.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\tk2dIndex.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\tk2dJSSupport.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\tk2dMenu.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\tk2dPreferencesEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\tk2dScaleUtility.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\tk2dSceneHelper.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\tk2dSpriteGuiUtility.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\tk2dUndo.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\tk2dUpdateWindow.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dTileMap\Editor\Importer\tk2dTileMapImporter.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dTileMap\Editor\tk2dTileMapBrushBuilder.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dTileMap\Editor\tk2dTileMapBrushRenderer.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dTileMap\Editor\tk2dTileMapEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dTileMap\Editor\tk2dTileMapEditorData.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dTileMap\Editor\tk2dTileMapEditorDataInspector.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dTileMap\Editor\tk2dTileMapSceneGUI.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dTileMap\Editor\tk2dTileMapScratchpad.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dTileMap\Editor\tk2dTileMapToolbar.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dTileMap\Editor\tk2dTileMapUtility.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIBaseItemControlEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIControlsHelperEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Controls\tk2dUICustomEditorGUILayout.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIDragItemEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIDropDownMenuEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIHoverItemEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIMultiStateToggleButtonEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIProgressBarEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIScrollableAreaEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIScrollbarEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Controls\tk2dUISoundItemEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Controls\tk2dUITextInputEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIToggleButtonEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIToggleButtonGroupEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIToggleControlEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Controls\tk2dUITweenItemEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIUpDownButtonEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIUpDownHoverButtonEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Core\tk2dUIItemBoundsHelper.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Core\tk2dUIItemEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Core\tk2dUILayoutContainerEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Core\tk2dUILayoutContainerSizerEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Core\tk2dUILayoutEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Core\tk2dUIMaskEditor.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Core\tk2dUIMethodBindingHelper.cs" />
+    <Compile Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Editor\Core\tk2dUISpriteAnimatorEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Arts\Res\Models\Spine\sdragon\npc_E.atlas.txt" />
@@ -175,6 +310,21 @@
     <None Include="Assets\ThirdParty\SpineUnity\spine-unity\Shaders\HiddenPass.shader" />
     <None Include="Assets\ThirdParty\SpineUnity\spine-unity\Shaders\Skeleton.shader" />
     <None Include="Assets\ThirdParty\SpineUnity\spine-unity\Shaders\SkeletonLit.shader" />
+    <None Include="Assets\ThirdParty\TK2DROOT\tk2d\Editor\EditorUtility.shader" />
+    <None Include="Assets\ThirdParty\TK2DROOT\tk2d\Goodies\TexturePacker\Exporter\2dtoolkit\exporter.xml" />
+    <None Include="Assets\ThirdParty\TK2DROOT\tk2d\Shaders\AdditiveVertexColor.shader" />
+    <None Include="Assets\ThirdParty\TK2DROOT\tk2d\Shaders\Blend2TexVertexColor.shader" />
+    <None Include="Assets\ThirdParty\TK2DROOT\tk2d\Shaders\CutoutVertexColor.shader" />
+    <None Include="Assets\ThirdParty\TK2DROOT\tk2d\Shaders\LitBlendVertexColor.shader" />
+    <None Include="Assets\ThirdParty\TK2DROOT\tk2d\Shaders\LitCutoutVertexColor.shader" />
+    <None Include="Assets\ThirdParty\TK2DROOT\tk2d\Shaders\LitPremulVertexColor.shader" />
+    <None Include="Assets\ThirdParty\TK2DROOT\tk2d\Shaders\LitSolidVertexColor.shader" />
+    <None Include="Assets\ThirdParty\TK2DROOT\tk2d\Shaders\PremulVertexColor.shader" />
+    <None Include="Assets\ThirdParty\TK2DROOT\tk2d\Shaders\SolidVertexColor.shader" />
+    <None Include="Assets\ThirdParty\TK2DROOT\tk2d\Shaders\goodies\PackedTextMesh.shader" />
+    <None Include="Assets\ThirdParty\TK2DROOT\tk2d\Shaders\resources\BlendVertexColor.shader" />
+    <None Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Shaders\DepthMask.shader" />
+    <None Include="Assets\ThirdParty\TK2DROOT\tk2dUI\Shaders\DepthMaskSolid.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

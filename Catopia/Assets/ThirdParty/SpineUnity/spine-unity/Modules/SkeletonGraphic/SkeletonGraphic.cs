@@ -179,20 +179,20 @@ public class SkeletonGraphic : MaskableGraphic {
 		canvasRenderer.Clear();
 	}
 
-	public void Initialize (bool overwrite) {
-		if (this.IsValid && !overwrite) return;
+	public TrackEntry Initialize (bool overwrite) {
+		if (this.IsValid && !overwrite) return null;
 
 		// Make sure none of the stuff is null
-		if (this.skeletonDataAsset == null) return;
+		if (this.skeletonDataAsset == null) return null;
 		var skeletonData = this.skeletonDataAsset.GetSkeletonData(false);
-		if (skeletonData == null) return;
+		if (skeletonData == null) return null;
 
-		if (skeletonDataAsset.atlasAssets.Length <= 0 || skeletonDataAsset.atlasAssets[0].materials.Length <= 0) return;
+		if (skeletonDataAsset.atlasAssets.Length <= 0 || skeletonDataAsset.atlasAssets[0].materials.Length <= 0) return null;
 
 		this.state = new Spine.AnimationState(skeletonDataAsset.GetAnimationStateData());
 		if (state == null) {
 			Clear();
-			return;
+			return null;
 		}
 
 		this.skeleton = new Skeleton(skeletonData);
@@ -203,7 +203,9 @@ public class SkeletonGraphic : MaskableGraphic {
 			skeleton.SetSkin(initialSkinName);
 
 		if (!string.IsNullOrEmpty(startingAnimation))
-			state.SetAnimation(0, startingAnimation, startingLoop);
+			return state.SetAnimation(0, startingAnimation, startingLoop);
+
+        return null;
 	}
 
 	public void UpdateMesh () {
