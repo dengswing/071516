@@ -16,23 +16,13 @@
 
 		_Color("Main Color", Color) = (0.9,0.9,0.9,1)
 		_OutlineColor("Outline Color", Color) = (0,0,0,1)
-		//_Outline ("Outline width",float) = 0.1
 		_Outline("Outline width", Range(.000, 0.05)) = .005
-
-
-		//_MainTex("Base (RGB)", 2D) = "white" { }
-	//	_Cutoff ("Alphatest Cutoff", float) = 0.05
-	_CameraSize("Camera Size", float) = 5
-
-		//	_RimPower("Rim Power", Range(0.5,8.0)) = 3.0
-
-		//_AP ("ap", float) = 1
-
+		_CameraSize("Camera Size", float) = 5
 		_MaskColor5("Mask Color Slot 1 (R Channel )", Color) = (1,1,1,1)
 		_MaskColor6("Mask Color Slot 2 (G Channel )", Color) = (1,1,1,1)
 		_MaskColor7("Mask Color Slot 3 (B Channel )", Color) = (1,1,1,1)
 		_MaskTex("Mask Image", 2D) = "white" { }
-	_MaskStrength("Mask Strength", Float) = 1
+		_MaskStrength("Mask Strength", Float) = 1
 
 	}
 
@@ -267,10 +257,6 @@
 
 		fixed4 col = 0;
 		o.Albedo.rgb = finalMask;
-		//o.Alpha = c.a-c.a*(1-_AP);
-
-		//half rim = 1.0 - saturate(dot(normalize(IN.viewDir), IN.worldNormal));
-		//o.Emission = o.Albedo.rgb * pow(rim, _RimPower);
 	}
 	ENDCG
 

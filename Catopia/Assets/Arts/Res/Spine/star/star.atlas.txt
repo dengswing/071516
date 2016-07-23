@@ -1,0 +1,34 @@
+
+star.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+M
+  rotate: false
+  xy: 260, 154
+  size: 94, 86
+  orig: 94, 86
+  offset: 0, 0
+  index: -1
+U
+  rotate: false
+  xy: 260, 65
+  size: 76, 87
+  orig: 76, 87
+  offset: 0, 0
+  index: -1
+Y
+  rotate: false
+  xy: 356, 154
+  size: 74, 86
+  orig: 74, 86
+  offset: 0, 0
+  index: -1
+star1
+  rotate: false
+  xy: 2, 2
+  size: 256, 238
+  orig: 256, 238
+  offset: 0, 0
+  index: -1

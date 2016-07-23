@@ -134,6 +134,13 @@
     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCTouchPad.cs" />
     <Compile Include="Assets\Scripts\CatEasyTouch.cs" />
     <Compile Include="Assets\Scripts\SpineDemo.cs" />
+    <Compile Include="Assets\Scripts\feed\FeedButton.cs" />
+    <Compile Include="Assets\Scripts\feed\FeedMenu.cs" />
+    <Compile Include="Assets\Scripts\feed\GameTools.cs" />
+    <Compile Include="Assets\Scripts\feed\UIMultiScrollIndex.cs" />
+    <Compile Include="Assets\Scripts\feed\UIMultiScroller.cs" />
+    <Compile Include="Assets\Scripts\feed\UIScrollIndex.cs" />
+    <Compile Include="Assets\Scripts\feed\UIScroller.cs" />
     <Compile Include="Assets\ThirdParty\SpineUnity\Examples\Getting Started\Scripts\BasicPlatformerController.cs" />
     <Compile Include="Assets\ThirdParty\SpineUnity\Examples\Getting Started\Scripts\ConstrainedCamera.cs" />
     <Compile Include="Assets\ThirdParty\SpineUnity\Examples\Getting Started\Scripts\Raptor.cs" />
@@ -349,6 +356,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Arts\Res\Models\Spine\sdragon\npc_E.atlas.txt" />
+    <None Include="Assets\Arts\Res\Spine\JellyBean\JellyBean.atlas.txt" />
+    <None Include="Assets\Arts\Res\Spine\back\back.atlas.txt" />
     <None Include="Assets\EasyTouchBundle\EasyTouch\RealseNotes.txt" />
     <None Include="Assets\EasyTouchBundle\EasyTouchControls\Readme.txt" />
     <None Include="Assets\EasyTouchBundle\EasyTouchControls\ReleaseNotes.txt" />
@@ -358,6 +367,7 @@
     <None Include="Assets\Shaders\NewSurfaceShader.shader" />
     <None Include="Assets\Shaders\OutlineShader.shader" />
     <None Include="Assets\Shaders\backup.shader" />
+    <None Include="Assets\Shaders\sss.shader" />
     <None Include="Assets\ThirdParty\SpineUnity\Examples\Spine\Dragon\dragon.atlas.txt" />
     <None Include="Assets\ThirdParty\SpineUnity\Examples\Spine\Dragon\license.txt" />
     <None Include="Assets\ThirdParty\SpineUnity\Examples\Spine\Eyes\eyes.atlas.txt" />

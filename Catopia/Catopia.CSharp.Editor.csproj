@@ -100,11 +100,11 @@
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
-    <Reference Include="tk2dSkin">
-      <HintPath>Assets\ThirdParty\TK2DROOT\tk2d\Editor\tk2dSkin.dll</HintPath>
-    </Reference>
     <Reference Include="tk2dExternal">
       <HintPath>Assets\ThirdParty\TK2DROOT\tk2d\Editor\tk2dExternal.dll</HintPath>
+    </Reference>
+    <Reference Include="tk2dSkin">
+      <HintPath>Assets\ThirdParty\TK2DROOT\tk2d\Editor\tk2dSkin.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-UnityScript">
       <HintPath>Library\ScriptAssemblies\Assembly-UnityScript.dll</HintPath>
@@ -277,6 +277,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Arts\Res\Models\Spine\sdragon\npc_E.atlas.txt" />
+    <None Include="Assets\Arts\Res\Spine\JellyBean\JellyBean.atlas.txt" />
+    <None Include="Assets\Arts\Res\Spine\back\back.atlas.txt" />
     <None Include="Assets\EasyTouchBundle\EasyTouch\RealseNotes.txt" />
     <None Include="Assets\EasyTouchBundle\EasyTouchControls\Readme.txt" />
     <None Include="Assets\EasyTouchBundle\EasyTouchControls\ReleaseNotes.txt" />
@@ -286,6 +288,7 @@
     <None Include="Assets\Shaders\NewSurfaceShader.shader" />
     <None Include="Assets\Shaders\OutlineShader.shader" />
     <None Include="Assets\Shaders\backup.shader" />
+    <None Include="Assets\Shaders\sss.shader" />
     <None Include="Assets\ThirdParty\SpineUnity\Examples\Spine\Dragon\dragon.atlas.txt" />
     <None Include="Assets\ThirdParty\SpineUnity\Examples\Spine\Dragon\license.txt" />
     <None Include="Assets\ThirdParty\SpineUnity\Examples\Spine\Eyes\eyes.atlas.txt" />
