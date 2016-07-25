@@ -35,9 +35,7 @@ public class DialogueBubble : ScaleMoveAlphaGroup
         }
         else
         {
-            // if (Input.GetMouseButton(0) || Input.GetTouch(0).phase==TouchPhase.Ended)
-             if (Input.GetMouseButton(0))
-
+            if (Input.GetMouseButton(0))
             {
                 isClick = true;
             }

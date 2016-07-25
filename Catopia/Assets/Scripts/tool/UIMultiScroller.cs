@@ -28,7 +28,7 @@ public class UIMultiScroller : MonoBehaviour
     private Queue<UIMultiScrollIndex> _unUsedQueue;  //将未显示出来的Item存入未使用队列里面，等待需要使用的时候直接取出
 
     private Action<int> itemClickBack;
-    private Action<int> itemStartBack;
+	private Action<int> itemStartBack;
 
     void Awake()
     {
@@ -40,7 +40,7 @@ public class UIMultiScroller : MonoBehaviour
     {
         int index = GetPosIndex();
 
-        Debug.Log("index=" + index + "|_index" + _index);
+      //  Debug.Log("index=" + index + "|_index" + _index);
 
         if (_index != index && index > -1)
         {
@@ -74,18 +74,16 @@ public class UIMultiScroller : MonoBehaviour
     /// </summary>
     public void Reset()
     {
-        if (_itemList != null)
+        if (_itemList == null) return;
+        while (_itemList.Count > 0)
         {
-            while (_itemList.Count > 0)
-            {
-                UIMultiScrollIndex item = _itemList[0];
-                GameObject.DestroyImmediate(item.gameObject);
-                _itemList.Remove(item);
-            }
-
-            _itemList.Clear();
+            UIMultiScrollIndex item = _itemList[0];
+            GameObject.DestroyImmediate(item.gameObject);
+            _itemList.Remove(item);
         }
 
+        _itemList.Clear();
+        // _unUsedQueue.Clear();
         _index = -1;
         _content.localPosition = new Vector3(0f, 0f, 0f);
         DataCount = 0;
@@ -131,10 +129,10 @@ public class UIMultiScroller : MonoBehaviour
     /// 添加点击事件侦听
     /// </summary>
     /// <param name="callBack"></param>
-	public void AddListenerItemClick(Action<int> callBack, Action<int> startBack)
+	public void AddListenerItemClick(Action<int> callBack,Action<int> startBack)
     {
         itemClickBack = callBack;
-        itemStartBack = startBack;
+		itemStartBack = startBack;
     }
 
     private void AddItemIntoPanel(int index)
@@ -191,7 +189,7 @@ public class UIMultiScroller : MonoBehaviour
         }
 
 
-        itemBase.AddListener(ItemClickHandler, ItemStartHandler);
+		itemBase.AddListener(ItemClickHandler,ItemStartHandler);
         itemBase.Scroller = this;
         itemBase.Index = index;
         _itemList.Add(itemBase);
@@ -202,25 +200,21 @@ public class UIMultiScroller : MonoBehaviour
         if (item && itemClickBack != null) itemClickBack(item.Index);
     }
 
-    private void ItemStartHandler(UIMultiScrollIndex item)
-    {
-        if (item && itemStartBack != null) itemStartBack(item.Index);
-    }
+	private void ItemStartHandler(UIMultiScrollIndex item)
+	{
+		if (item && itemStartBack != null) itemStartBack(item.Index);
+	}
 
     private int GetPosIndex()
     {
-        var tmpIndex = 0;
         switch (_movement)
         {
             case Arrangement.Horizontal:
-                tmpIndex = Mathf.FloorToInt(_content.anchoredPosition.x / -(cellWidth + cellPadding));
-                break;
+                return Mathf.FloorToInt(_content.anchoredPosition.x / -(cellWidth + cellPadding));
             case Arrangement.Vertical:
-                tmpIndex = Mathf.FloorToInt(_content.anchoredPosition.y / (cellHeight + cellPadding));
-                break;
+                return Mathf.FloorToInt(_content.anchoredPosition.y / (cellHeight + cellPadding));
         }
-
-        return (tmpIndex < 0 ? 0 : tmpIndex);
+        return 0;
     }
 
     public Vector3 GetPosition(int i)

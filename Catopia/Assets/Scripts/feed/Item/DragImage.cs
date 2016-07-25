@@ -6,31 +6,53 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class DragImage : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public bool dragOnSurfaces = true;
-    public ScrollRect ScrollRect;
-    private GameObject m_DraggingIcon;
-    private RectTransform m_DraggingPlane;
+	public bool dragOnSurfaces = true;
+	private GameObject m_DraggingIcon;
+	private RectTransform m_DraggingPlane;
 
     private Action<GameObject> dragEndBack;
-    Vector2 onBeginDragPosition;
-    bool isDragItem;
-    float scrollX;
+    private ScrollRect scrollRect;
+    private Vector2 onBeginDragPosition;
 
     void Start()
     {
-        if (ScrollRect == null) ScrollRect = FindInParents<ScrollRect>(gameObject);
+        if (scrollRect == null) scrollRect = FindInParents<ScrollRect>(gameObject);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
-    {
+	{
         onBeginDragPosition = eventData.position;
-        scrollX = onBeginDragPosition.x;
-        Debug.Log("==>" + onBeginDragPosition);
+        scrollRect.OnBeginDrag(eventData);
+	}
 
-        ScrollRect.OnBeginDrag(eventData);
+	public void OnDrag(PointerEventData data)
+	{
+        if (m_DraggingIcon != null)
+        {
+            SetDraggedPosition(data);
+        }
+        else
+        {
+            Vector2 tempPosition = data.position;
+            if ((tempPosition.x > onBeginDragPosition.x) &&
+               Mathf.Abs(tempPosition.x - onBeginDragPosition.x) < Mathf.Abs(tempPosition.y - onBeginDragPosition.y))
+            //data.pointerCurrentRaycast.gameObject == data.pointerPressRaycast.gameObject)
+            {
+                CreateDraggedIcon(data);
+            }
+            else if (Mathf.Abs(tempPosition.y - onBeginDragPosition.y) < Mathf.Abs(tempPosition.x - onBeginDragPosition.x))
+            {
+                scrollRect.OnDrag(data);
+            }
+        }
     }
 
-    void CreateDraggedIcon(PointerEventData data)
+    public void AddListener(Action<GameObject> dragEndBack)
+    {
+        this.dragEndBack = dragEndBack;
+    }
+
+    private void CreateDraggedIcon(PointerEventData data)
     {
         var canvas = FindInParents<Canvas>(gameObject);
         if (canvas == null)
@@ -59,81 +81,44 @@ public class DragImage : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         SetDraggedPosition(data);
     }
 
-    public void OnDrag(PointerEventData data)
-    {
-       
-        if (m_DraggingIcon != null)
-        {
-            SetDraggedPosition(data);
-        }
-        else
-        {
-            isDragItem = true;
-            Vector2 tempPosition = data.position;
-            float scrollMoveX = data.delta.x - scrollX;
-            scrollX = tempPosition.x;
-            if ((tempPosition.x > onBeginDragPosition.x) &&
-               Mathf.Abs(tempPosition.x - onBeginDragPosition.x) < Mathf.Abs(tempPosition.y - onBeginDragPosition.y))
-            //data.pointerCurrentRaycast.gameObject == data.pointerPressRaycast.gameObject)
-            {
-                CreateDraggedIcon(data);
-            }
-            else if (Mathf.Abs(tempPosition.y - onBeginDragPosition.y) < Mathf.Abs(tempPosition.x - onBeginDragPosition.x))
-            {
-               // data.scrollDelta = new Vector2(data.delta.x * .2f, 0);
-               // data.IsScrolling();
-                ScrollRect.OnDrag(data);
-                isDragItem = false;               
-            }
-        }
-    }
-
-    public void AddListener(Action<GameObject> dragEndBack)
-    {
-        this.dragEndBack = dragEndBack;
-    }
-
     private void SetDraggedPosition(PointerEventData data)
-    {
-        if (dragOnSurfaces && data.pointerEnter != null && data.pointerEnter.transform as RectTransform != null)
-            m_DraggingPlane = data.pointerEnter.transform as RectTransform;
+	{
+		if (dragOnSurfaces && data.pointerEnter != null && data.pointerEnter.transform as RectTransform != null)
+			m_DraggingPlane = data.pointerEnter.transform as RectTransform;
+		
+		var rt = m_DraggingIcon.GetComponent<RectTransform>();
+		Vector3 globalMousePos;
+		if (RectTransformUtility.ScreenPointToWorldPointInRectangle(m_DraggingPlane, data.position, data.pressEventCamera, out globalMousePos))
+		{
+			rt.position = globalMousePos;
+			rt.rotation = m_DraggingPlane.rotation;
+		}
+	}
 
-        var rt = m_DraggingIcon.GetComponent<RectTransform>();
-        Vector3 globalMousePos;
-        if (RectTransformUtility.ScreenPointToWorldPointInRectangle(m_DraggingPlane, data.position, data.pressEventCamera, out globalMousePos))
-        {
-            rt.position = globalMousePos;
-            rt.rotation = m_DraggingPlane.rotation;
-        }
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        // if (!isDragItem) eventData.scrollDelta = new Vector2(eventData.delta.x * .2f, 0);
-
-        ScrollRect.OnEndDrag(eventData);
-
+	public void OnEndDrag(PointerEventData eventData)
+	{
+        scrollRect.OnEndDrag(eventData);
         if (m_DraggingIcon != null)
         {
             if (dragEndBack != null) dragEndBack(m_DraggingIcon);
         }
-        //Destroy(m_DraggingIcon);
-    }
+			//Destroy(m_DraggingIcon);
+	}
 
-    static public T FindInParents<T>(GameObject go) where T : Component
-    {
-        if (go == null) return null;
-        var comp = go.GetComponent<T>();
+	static public T FindInParents<T>(GameObject go) where T : Component
+	{
+		if (go == null) return null;
+		var comp = go.GetComponent<T>();
 
-        if (comp != null)
-            return comp;
-
-        Transform t = go.transform.parent;
-        while (t != null && comp == null)
-        {
-            comp = t.gameObject.GetComponent<T>();
-            t = t.parent;
-        }
-        return comp;
-    }
+		if (comp != null)
+			return comp;
+		
+		Transform t = go.transform.parent;
+		while (t != null && comp == null)
+		{
+			comp = t.gameObject.GetComponent<T>();
+			t = t.parent;
+		}
+		return comp;
+	}
 }
