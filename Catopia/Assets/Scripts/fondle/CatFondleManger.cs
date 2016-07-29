@@ -80,7 +80,7 @@ public class CatFondleManger : MonoBehaviour
 
     private void RandomSensitivity()
     {
-        currentSensitivityList = CatGameTools.RandomContent<GameObject>(sensitivityList, randomMin, randomMax);
+        currentSensitivityList = CatCommonTools.RandomContent<GameObject>(sensitivityList, randomMin, randomMax);
     }
 
     private void DetectionSensitivity(GameObject obj)
