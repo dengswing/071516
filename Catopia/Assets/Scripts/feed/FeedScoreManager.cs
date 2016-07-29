@@ -52,7 +52,6 @@ public class FeedScoreManager : MonoBehaviour
 
     private void UpdateTween(int num)
     {
-        Debug.Log(num);      // 变化过程中， 每帧回调该方法
         score.value = num;
         progressText.text = num.ToString();
     }

@@ -1,0 +1,27 @@
+
+touch2.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+6546
+  rotate: false
+  xy: 2, 2
+  size: 101, 101
+  orig: 101, 101
+  offset: 0, 0
+  index: -1
+658756
+  rotate: false
+  xy: 260, 267
+  size: 77, 94
+  orig: 77, 94
+  offset: 0, 0
+  index: -1
+i67i
+  rotate: false
+  xy: 2, 105
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1

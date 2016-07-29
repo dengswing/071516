@@ -59,17 +59,17 @@ public class FeedItemManager : MonoBehaviour
 
     void ItemClickHandler(int index)
     {
-        var eatState = EAT_STATE.Yummy;
+        var eatState = CAT_STATE.Yummy;
         switch (index)
         {
             case 0:
-                eatState = EAT_STATE.Yuck;
+                eatState = CAT_STATE.Yuck;
                 break;
             case 1:
-                eatState = EAT_STATE.Yawm;
+                eatState = CAT_STATE.Yawm;
                 break;
             case 2:
-                eatState = EAT_STATE.Yummy;
+                eatState = CAT_STATE.Yummy;
                 break;
             default:
                 break;

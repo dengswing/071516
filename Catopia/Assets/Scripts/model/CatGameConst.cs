@@ -17,12 +17,23 @@ public class CatGameConst
     public const string CatIdle = "idle_1";
     public const string CatEat = "eat";
     public const string YummyStar = "animation";
-
-    // 文字内容系列
-    public const string Dialogue_A = "I am so hungry.\nCan you give me some food.";
-    public const string Dialogue_B = "Oh...Yuck...\nI hate the taste.";
-    public const string Dialogue_C = "It's so delicious!\nPlease accept my gifts.";
+    public const string MusicNote = "star1";
 
     public static string[] MenuBtnName = new string[] { "Seafood", "Meat", "Soup" };
+
+    // 文字内容系列
+    public const string Dialogue_Feed_A = "I am so hungry.\nCan you give me some food?";
+    public const string Dialogue_Feed_B = "Oh...Yuck...\nI hate the taste.";
+    public const string Dialogue_Feed_C = "It's so delicious!\nPlease accept my gift.";
+
+    public const string Dialogue_Fondle_A = "I am so bored.\nCan you pet me?";
+    public const string Dialogue_Fondle_B = "Oh...Yuck...\nI hate that.";
+    public const string Dialogue_Fondle_C = "Thank you!\nI feel great!";
+
+    //抚摸系列动作
+    public const string FondleEarL = "touch1_ear_L";
+    public const string FondleEyeL = "eye_l";
+    public const string FondleFootL = "foot_l";
+
 
 }

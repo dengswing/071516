@@ -52,7 +52,7 @@ public class YuckEffect : MonoBehaviour
 
     void OnDisable()
     {
-		currentIndex = 0;
+        currentIndex = 0;
         list.Clear();
         transform.localPosition = new Vector3(0, 0, 0);
     }
@@ -69,8 +69,8 @@ public class YuckEffect : MonoBehaviour
     void HitItem()
     {
         var _content = transform.GetComponent<RectTransform>();
-        var index = Mathf.FloorToInt(_content.anchoredPosition.y / gap);
-        if (currentIndex != index)
+        var index = Mathf.FloorToInt(_content.anchoredPosition.y / gap);      
+        if (index >= 0 && currentIndex != index)
         {
             var con = list[currentIndex];
             con.transform.localPosition = new Vector3(0, cellPositionY);

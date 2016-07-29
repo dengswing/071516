@@ -10,7 +10,9 @@ public enum ExpressionState
     A,
     B,
     C,
-    D
+    D,
+    E,
+    F,
 }
 
 /// <summary>
@@ -28,12 +30,12 @@ public class ExpressionManager : MonoBehaviour
     public void StartExpression(ExpressionState state, Action callback)
     {
         ExpressionShow(state, callback);
-        DOTween.To(() => canvas.alpha, x => canvas.alpha = x, 1, 1); //为了防止spine动画闪一下
+        DOTween.To(() => canvas.alpha, x => canvas.alpha = x, 1, 0.5f); //为了防止spine动画闪一下
     }
 
     public void Hide()
     {
-        DOTween.To(() => canvas.alpha, x => canvas.alpha = x, 0, 1); //为了防止spine动画闪一下
+        DOTween.To(() => canvas.alpha, x => canvas.alpha = x, 0, 0.3f); //为了防止spine动画闪一下
     }
 
     void ExpressionShow(ExpressionState state, Action callback)
@@ -59,14 +61,21 @@ public class ExpressionManager : MonoBehaviour
                 expressionA = CatGameConst.Expression[6];
                 expressionB = CatGameConst.Expression[7];
                 break;
+            case ExpressionState.E:
+                expressionA = CatGameConst.Expression[4];
+                break;
+            case ExpressionState.F:
+                expressionA = CatGameConst.Expression[6];
+                break;
             default:
                 break;
         }
 
         spineAnimation.PlayAnimation(expressionA, false, () =>
             {
-                spineAnimation.PlayAnimation(expressionB, true, null);
+                if (!string.IsNullOrEmpty(expressionB)) spineAnimation.PlayAnimation(expressionB, true, null);
                 if (callback != null) callback();
+                callback = null;
             });
     }
 

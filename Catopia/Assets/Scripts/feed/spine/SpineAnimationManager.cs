@@ -26,7 +26,7 @@ public class SpineAnimationManager : MonoBehaviour
 
     void SetSkeleton(string act, bool loop, Action callBack)
     {
-       // Debug.Log("act: " + act);
+      //  Debug.Log("act: " + act);
         skeleton.startingAnimation = act;
         skeleton.startingLoop = loop;
         var trackEntry = skeleton.Initialize(true);

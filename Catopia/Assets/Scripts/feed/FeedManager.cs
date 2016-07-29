@@ -19,8 +19,8 @@ public class FeedManager : MonoBehaviour
 
     EatResultManager eatManager;
 
-    EAT_STATE resultState;
-    EAT_STATE changeState;
+    CAT_STATE resultState;
+    CAT_STATE changeState;
     Transform shop;
     Transform scoreEffect;
     Transform eatLoop;
@@ -67,7 +67,7 @@ public class FeedManager : MonoBehaviour
 
     void ExpressionFinish()
     {
-        dialogueManager.StartDailogue(CatGameConst.Dialogue_A, DailogueFinish);
+        dialogueManager.StartDailogue(CatGameConst.Dialogue_Feed_A, DailogueFinish);
     }
 
     void DailogueFinish()
@@ -85,12 +85,11 @@ public class FeedManager : MonoBehaviour
 		shopMove.ItemShowAndHide(false);
 	}
 
-    void EatHandler(EAT_STATE eat)
+    void EatHandler(CAT_STATE eat)
     { //开始喂食
-		Debug.Log("====>>>123");
-        resultState = eat;
+		resultState = eat;
         
-        actionManager.Feed(EAT_STATE.EAT, EatFinish);
+        actionManager.Feed(CAT_STATE.EAT, EatFinish);
         expressionManager.Hide(); //隐藏表情
         loopEffectManager.PlayAnimation();
     }
@@ -104,22 +103,22 @@ public class FeedManager : MonoBehaviour
         ExpressionState expressionIcon = ExpressionState.B;
         switch (resultState)
         {
-            case EAT_STATE.Yuck:
-                changeState = EAT_STATE.YuckChange;
+            case CAT_STATE.Yuck:
+                changeState = CAT_STATE.YuckChange;
                 expressionIcon = ExpressionState.B;
                 eatManager = yuckManager;
-                info = CatGameConst.Dialogue_B;
+                info = CatGameConst.Dialogue_Feed_B;
                 break;
-            case EAT_STATE.Yummy:
-                changeState = EAT_STATE.YummyChange;
+            case CAT_STATE.Yummy:
+                changeState = CAT_STATE.YummyChange;
                 expressionIcon = ExpressionState.C;
                 eatManager = yummyManager;
-                info = CatGameConst.Dialogue_C;
+                info = CatGameConst.Dialogue_Feed_C;
                 break;
-            case EAT_STATE.Yawm:
-                changeState = EAT_STATE.YummyChange;
+            case CAT_STATE.Yawm:
+                changeState = CAT_STATE.YummyChange;
                 expressionIcon = ExpressionState.D;
-                info = CatGameConst.Dialogue_C;
+                info = CatGameConst.Dialogue_Feed_C;
                 eatManager = yawmManager;
                 break;
             default:

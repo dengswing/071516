@@ -5,15 +5,15 @@ using System.Collections.Generic;
 /// <summary>
 /// 吃东西的状态
 /// </summary>
-public enum EAT_STATE
+public enum CAT_STATE
 {
     IDEL,
     EAT,
-    Yuck,
-    Yummy,
-    Yawm,
+    Yuck, //讨厌
+    Yummy, //愉快的
+    Yawm, //一般
     YummyChange,
-    YuckChange
+    YuckChange,
 }
 
 /// <summary>
@@ -29,34 +29,34 @@ public class CatActionManager : MonoBehaviour
     /// 
     /// </summary>
     /// <param name="eatState"></param>
-    public void Feed(EAT_STATE eatState, Action callBack)
+    public void Feed(CAT_STATE eatState, Action callBack)
     {
         animationBack = callBack;
 
         switch (eatState)
         {
-            case EAT_STATE.IDEL:
+            case CAT_STATE.IDEL:
                 actionList = new List<string> { CatGameConst.CatIdle };
                 PlayAnimation(actionList);
                 break;
-            case EAT_STATE.EAT:
+            case CAT_STATE.EAT:
                 actionList = new List<string> { CatGameConst.CatEat };
                 PlayAnimation(actionList);
                 break;
-            case EAT_STATE.Yuck:
+            case CAT_STATE.Yuck:
                 actionList = new List<string>(CatGameConst.CatYuckList.ToArray());
                 PlayAnimation(actionList);
                 break;
-            case EAT_STATE.Yummy:
-            case EAT_STATE.Yawm:
+            case CAT_STATE.Yummy:
+            case CAT_STATE.Yawm:
                 actionList = new List<string>(CatGameConst.CatYummyList.ToArray());
                 PlayAnimation(actionList);
                 break;
-            case EAT_STATE.YummyChange:
+            case CAT_STATE.YummyChange:
                 actionList = new List<string> { CatGameConst.CatYummyChange };
                 PlayAnimation(actionList);
                 break;
-            case EAT_STATE.YuckChange:
+            case CAT_STATE.YuckChange:
                 actionList = new List<string> { CatGameConst.CatYuckChange };
                 PlayAnimation(actionList);
                 break;
@@ -65,6 +65,21 @@ public class CatActionManager : MonoBehaviour
                 PlayAnimation(actionList);
                 break;
         }
+    }
+
+    public void FondleAction(string name, Action callBack)
+    {
+        animationBack = () =>
+        {
+            spineAnimation.PlayAnimation(CatGameConst.CatIdle, true, null);
+            if (callBack != null)
+            {
+                callBack();
+                callBack = null;
+            }
+        };
+        actionList = new List<string> { name };
+        PlayAnimation(actionList);
     }
 
     void OnCollisionEnter2D(Collision2D coll)

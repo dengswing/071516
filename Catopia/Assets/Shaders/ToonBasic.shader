@@ -8,9 +8,10 @@ Shader "Toon/Basic" {
 
 
 	SubShader {
-		Tags { "RenderType"="Opaque" }
+		Tags { "RenderType"="Opaque" "Queue" = "Transparent" }
 		Pass {
 			Name "BASE"
+			Blend SrcAlpha OneMinusSrcAlpha
 			Cull Off
 			
 			CGPROGRAM
