@@ -1,0 +1,258 @@
+
+SesameBall.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+01
+  rotate: false
+  xy: 585, 607
+  size: 298, 80
+  orig: 298, 80
+  offset: 0, 0
+  index: -1
+02
+  rotate: false
+  xy: 276, 352
+  size: 222, 51
+  orig: 222, 51
+  offset: 0, 0
+  index: -1
+03
+  rotate: false
+  xy: 914, 447
+  size: 45, 34
+  orig: 45, 34
+  offset: 0, 0
+  index: -1
+04
+  rotate: false
+  xy: 2, 603
+  size: 581, 84
+  orig: 581, 84
+  offset: 0, 0
+  index: -1
+354354
+  rotate: false
+  xy: 615, 530
+  size: 222, 75
+  orig: 222, 75
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 145
+  size: 270, 205
+  orig: 270, 205
+  offset: 0, 0
+  index: -1
+chi
+  rotate: false
+  xy: 859, 455
+  size: 53, 73
+  orig: 53, 73
+  offset: 0, 0
+  index: -1
+chi2
+  rotate: false
+  xy: 526, 45
+  size: 68, 80
+  orig: 68, 80
+  offset: 0, 0
+  index: -1
+chie1
+  rotate: false
+  xy: 2, 5
+  size: 133, 23
+  orig: 133, 23
+  offset: 0, 0
+  index: -1
+chie2
+  rotate: true
+  xy: 526, 127
+  size: 88, 52
+  orig: 88, 52
+  offset: 0, 0
+  index: -1
+ear_L
+  rotate: false
+  xy: 276, 405
+  size: 228, 196
+  orig: 228, 196
+  offset: 0, 0
+  index: -1
+ear_R
+  rotate: false
+  xy: 2, 352
+  size: 272, 249
+  orig: 272, 249
+  offset: 0, 0
+  index: -1
+eye_happy
+  rotate: false
+  xy: 500, 302
+  size: 94, 86
+  orig: 94, 86
+  offset: 0, 0
+  index: -1
+eye_happy_2
+  rotate: true
+  xy: 409, 44
+  size: 162, 115
+  orig: 162, 115
+  offset: 0, 0
+  index: -1
+eye_happy_3
+  rotate: true
+  xy: 983, 721
+  size: 98, 23
+  orig: 98, 23
+  offset: 0, 0
+  index: -1
+eye_happy_L
+  rotate: false
+  xy: 615, 397
+  size: 159, 131
+  orig: 159, 131
+  offset: 0, 0
+  index: -1
+eye_unhappy
+  rotate: false
+  xy: 677, 689
+  size: 304, 130
+  orig: 304, 130
+  offset: 0, 0
+  index: -1
+eye_unhappy_2
+  rotate: false
+  xy: 2, 30
+  size: 297, 113
+  orig: 297, 113
+  offset: 0, 0
+  index: -1
+foot1
+  rotate: false
+  xy: 301, 32
+  size: 106, 174
+  orig: 106, 174
+  offset: 0, 0
+  index: -1
+foot2
+  rotate: false
+  xy: 506, 390
+  size: 107, 211
+  orig: 107, 211
+  offset: 0, 0
+  index: -1
+foot3
+  rotate: false
+  xy: 482, 217
+  size: 79, 83
+  orig: 79, 83
+  offset: 0, 0
+  index: -1
+hair
+  rotate: true
+  xy: 885, 596
+  size: 91, 95
+  orig: 91, 95
+  offset: 0, 0
+  index: -1
+happy
+  rotate: false
+  xy: 859, 404
+  size: 52, 49
+  orig: 52, 49
+  offset: 0, 0
+  index: -1
+happy2
+  rotate: true
+  xy: 563, 248
+  size: 52, 49
+  orig: 52, 49
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 689
+  size: 673, 333
+  orig: 673, 333
+  offset: 0, 0
+  index: -1
+mi1
+  rotate: true
+  xy: 1014, 1012
+  size: 10, 8
+  orig: 10, 8
+  offset: 0, 0
+  index: -1
+mi2
+  rotate: false
+  xy: 839, 596
+  size: 9, 9
+  orig: 9, 9
+  offset: 0, 0
+  index: -1
+mouth1
+  rotate: false
+  xy: 911, 531
+  size: 67, 63
+  orig: 67, 63
+  offset: 0, 0
+  index: -1
+mouth2
+  rotate: true
+  xy: 526, 2
+  size: 41, 46
+  orig: 41, 46
+  offset: 0, 0
+  index: -1
+mouth3
+  rotate: false
+  xy: 914, 483
+  size: 64, 46
+  orig: 64, 46
+  offset: 0, 0
+  index: -1
+mouth4
+  rotate: false
+  xy: 839, 530
+  size: 70, 64
+  orig: 70, 64
+  offset: 0, 0
+  index: -1
+nose
+  rotate: true
+  xy: 482, 320
+  size: 30, 16
+  orig: 30, 16
+  offset: 0, 0
+  index: -1
+sweater
+  rotate: false
+  xy: 677, 821
+  size: 335, 201
+  orig: 335, 201
+  offset: 0, 0
+  index: -1
+sweaterback
+  rotate: true
+  xy: 776, 401
+  size: 127, 81
+  orig: 127, 81
+  offset: 0, 0
+  index: -1
+tail
+  rotate: false
+  xy: 274, 208
+  size: 206, 142
+  orig: 206, 142
+  offset: 0, 0
+  index: -1
+unhappy
+  rotate: false
+  xy: 615, 340
+  size: 154, 55
+  orig: 154, 55
+  offset: 0, 0
+  index: -1

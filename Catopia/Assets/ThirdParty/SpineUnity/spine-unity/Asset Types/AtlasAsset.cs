@@ -164,7 +164,7 @@ public class MaterialsTextureLoader : TextureLoader {
 			}
 		}
 		if (material == null) {
-			Debug.LogError("Material with texture name \"" + name + "\" not found for atlas asset: " + atlasAsset.name, atlasAsset);
+			Debug.LogWarning("Material with texture name \"" + name + "\" not found for atlas asset: " + atlasAsset.name, atlasAsset);
 			return;
 		}
 		page.rendererObject = material;

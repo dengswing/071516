@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: d414d58f7ddfacc45bd0537440ed8e3f
-timeCreated: 1469598557
-licenseType: Free
+guid: 9a5870fbca0eaa3478a71d6cef9cc56a
+timeCreated: 1469775542
+licenseType: Pro
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -9,8 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: default
-    4300002: Object006
+    4300000: Object007
     9500000: //RootNode
   materials:
     importMaterials: 1

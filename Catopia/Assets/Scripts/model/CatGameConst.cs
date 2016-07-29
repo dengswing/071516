@@ -34,6 +34,4 @@ public class CatGameConst
     public const string FondleEarL = "touch1_ear_L";
     public const string FondleEyeL = "eye_l";
     public const string FondleFootL = "foot_l";
-
-
 }

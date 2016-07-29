@@ -15,8 +15,6 @@ public enum CatZoomState
 public class CatScaleEffect : MonoBehaviour
 {
     public GameObject bg;
-    public Vector2 startPosition;
-    public Vector2 endPosition;
     public Vector2 startScale;
     public Vector2 endScale;
     public float duration = 1f;
@@ -27,6 +25,8 @@ public class CatScaleEffect : MonoBehaviour
     private CatZoomState iState = CatZoomState.Normal;
     private RectTransform rect;
     private CanvasGroup canvas;
+    private Vector2 startPosition;
+    private Vector2 endPosition;
 
     void Start()
     {
@@ -35,6 +35,11 @@ public class CatScaleEffect : MonoBehaviour
 
         rect = gameObject.GetComponent<RectTransform>();
         canvas = bg.GetComponent<CanvasGroup>();
+
+        startPosition = transform.localPosition;
+        endPosition = new Vector2(startPosition.x, startPosition.y - 20);
+
+        Debug.Log("startPosition" + transform.localPosition);
     }
 
     private void FondleHandler(CatZoomState state, Action callBack)
@@ -57,7 +62,7 @@ public class CatScaleEffect : MonoBehaviour
         rect.DOScale(startScale, 0f);
         rect.DOScale(endScale, duration).SetEase(Ease.OutQuart);
 
-        CatGameTools.UIGameObjectAlphaBack(canvas, .5f, duration);
+        CatGameTools.UIGameObjectAlphaBack(canvas, 0.5f, duration);
     }
 
     public void ZoomOut()
@@ -70,7 +75,7 @@ public class CatScaleEffect : MonoBehaviour
         rect.DOScale(endScale, 0f);
         rect.DOScale(startScale, duration).SetEase(Ease.OutQuart);
 
-        CatGameTools.UIGameObjectAlphaBack(canvas, 1f, duration);
+        CatGameTools.UIGameObjectAlphaBack(canvas, 0f, duration);
     }
 
     void Update()
